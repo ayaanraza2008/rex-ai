@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dynamic CSS Theme Tokens for REX AI */
+  --color-bg: #050B14;
+  --color-surface: rgba(7, 21, 38, 0.75);
+  --color-border: rgba(34, 211, 238, 0.25);
+  --color-primary: #22D3EE;
+  --color-accent: #3B82F6;
+  --color-glow: rgba(34, 211, 238, 0.45);
+
+  /* Smooth 400ms cross-fade transition on all theme variables */
+  transition: background-color 400ms ease,
+              border-color 400ms ease,
+              box-shadow 400ms ease,
+              color 400ms ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: #f3f4f6;
+  font-family: 'Rajdhani', sans-serif;
+  overflow: hidden;
+  user-select: none;
+  transition: background-color 400ms ease;
+}
+
+/* Subtle CRT scanline effect */
+.scanline-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 5;
+  opacity: 0.35;
+}
+
+/* Sci-fi HUD fine grid texture */
+.hud-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
